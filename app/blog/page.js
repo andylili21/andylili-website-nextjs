@@ -17,7 +17,11 @@ export default async function BlogPage() {
             分享我在Web开发、编程和设计方面的学习经验和见解
           </p>
         </div>
-        <BlogList posts={posts} />
+        {posts && Array.isArray(posts) ? (
+          <BlogList posts={posts} />
+        ) : (
+          <div className="text-center text-gray-500">暂无博客文章</div>
+        )}
       </section>
       <Footer />
     </main>
