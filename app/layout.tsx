@@ -1,9 +1,8 @@
 // app/layout.js
 import './globals.css'
-import { Inter } from 'next/font/google'
 import type { ReactNode } from 'react'
 
-const inter = Inter({ subsets: ['latin'] })
+
 
 export const metadata = {
   title: '我的个人网站 | 开发者与博主',
@@ -13,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="zh">
-      <body className={inter.className}>
+      <body>
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
           {children}
         </div>
