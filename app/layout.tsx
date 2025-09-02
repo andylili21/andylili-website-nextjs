@@ -1,6 +1,7 @@
 // app/layout.js
 import './globals.css'
 import { Inter } from 'next/font/google'
+import type { ReactNode } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -9,7 +10,7 @@ export const metadata = {
   description: '个人网站与技术博客，分享Web开发、编程技巧和项目经验',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="zh">
       <body className={inter.className}>
