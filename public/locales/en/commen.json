@@ -1,0 +1,9 @@
+{
+  "chinese": "Chinese",
+  "english": "English",
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "about": "About Me"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "chinese": "中文",
+  "english": "English",
+  "nav": {
+    "home": "首页",
+    "blog": "博客",
+    "about": "关于我"
+  }
+}

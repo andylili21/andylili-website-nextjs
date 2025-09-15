@@ -12,14 +12,14 @@ export async function generateStaticParams() {
   }))
 }
 
-export async function generateMetadata({ params }) {
-  const post = await getPostBySlug(params.slug)
+// export async function generateMetadata({ params }) {
+//   const post = await getPostBySlug(params.slug)
   
-  return {
-    title: `${post.title} | 我的博客`,
-    description: post.excerpt,
-  }
-}
+//   return {
+//     title: `${post.title} | 我的博客`,
+//     description: post.excerpt,
+//   }
+// }
 
 export default async function BlogPostPage({ params }) {
   const post = await getPostBySlug(params.slug)
@@ -27,7 +27,7 @@ export default async function BlogPostPage({ params }) {
 
   return (
     <main>
-      <Header />
+      {/* <Header /> */}
       <BlogPost post={post} relatedPosts={relatedPosts} />
       <Footer />
     </main>

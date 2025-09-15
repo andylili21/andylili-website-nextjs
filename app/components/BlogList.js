@@ -9,7 +9,7 @@ export default function BlogList({ posts }) {
         <article key={post.slug} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
           <div className="h-48 relative">
             <Image
-              src={post.image || '/images/blog-placeholder.jpg'}
+              src="/images/image.png"
               alt={post.title}
               fill
               className="object-cover"
