@@ -1,5 +1,5 @@
 // app/blog/[slug]/page.js
-import Header from '../../components/Header'
+// import Header from '../../components/Header'
 import BlogPost from '../../components/BlogPost'
 import Footer from '../../components/Footer'
 import { getPostBySlug, getAllPosts } from '../../lib/posts'

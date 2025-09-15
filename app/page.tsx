@@ -1,6 +1,5 @@
 // app/page.js
 import Link from 'next/link'
-// import DockAnimation from './components/DockAnimation'
 import Hero from './components/Hero'
 import BlogPreview from './components/BlogPreview'
 import Projects from './components/Projects'
