@@ -24,32 +24,49 @@ export default function Projects() {
   ]
 
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">精选项目</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">精选项目</h2>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             展示我最近完成的一些个人和专业项目
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="space-y-6">
           {projects.map((project, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">{project.title}</h3>
-              <p className="text-gray-600 mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map(tag => (
-                  <span key={tag} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
-                    {tag}
-                  </span>
-                ))}
+            <div 
+              key={index} 
+              className="rounded-xl border border-gray-200 dark:border-gray-700 p-6 backdrop-blur-sm bg-white/70 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800/70 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
+                  {project.title}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map(tag => (
+                    <span 
+                      key={tag} 
+                      className="text-xs px-2 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
+              
+              <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                {project.description}
+              </p>
+              
               <Link 
                 href={project.link}
-                className="text-blue-600 font-medium hover:text-blue-800 transition-colors"
+                className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
               >
-                查看项目 →
+                查看项目
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                </svg>
               </Link>
             </div>
           ))}
@@ -58,7 +75,7 @@ export default function Projects() {
         <div className="text-center mt-12">
           <Link 
             href="/projects" 
-            className="inline-block border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors"
+            className="inline-block border border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 px-6 py-3 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
           >
             查看更多项目
           </Link>

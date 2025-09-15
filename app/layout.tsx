@@ -1,6 +1,9 @@
 // app/layout.js
+import ThemeToggle from './components/ThemeToggle'
 import './globals.css'
 import type { ReactNode } from 'react'
+import { getTheme } from './lib/theme';
+import Header from './components/Header'
 
 
 
@@ -10,10 +13,14 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  
+  const initialTheme = getTheme();
+
   return (
-    <html lang="zh">
+    <html lang="zh-CN" data-theme={initialTheme}>
       <body>
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+        <div>
+          <Header/>
           {children}
         </div>
       </body>

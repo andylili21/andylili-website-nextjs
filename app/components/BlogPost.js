@@ -21,7 +21,7 @@ export default function BlogPost({ post, relatedPosts }) {
         {post.image && (
           <div className="h-96 relative rounded-xl overflow-hidden mb-8">
             <Image
-              src={post.image}
+              src="/images/image.png"
               alt={post.title}
               fill
               className="object-cover"

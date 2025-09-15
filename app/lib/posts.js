@@ -7,7 +7,7 @@ const posts = [
     excerpt: '学习如何使用Next.js、MDX和Vercel构建高性能的现代博客网站。',
     content: '<p>这是一篇关于如何使用Next.js构建博客的详细教程...</p>',
     date: '2024-03-27',
-    image: '/images/blog-nextjs.jpg',
+    image: 'https://zh-hans.react.dev/images/home/community/react_conf_hallway.webp',
     tags: ['Next.js', 'React', '博客'],
     readingTime: 8,
     featured: true
@@ -18,7 +18,8 @@ const posts = [
     excerpt: '提高React应用性能的实用技巧和最佳实践。',
     content: '<p>React应用性能优化是每个开发者都需要掌握的技能...</p>',
     date: '2024-03-20',
-    image: '/images/blog-react.jpg',
+    image: 'https://zh-hans.react.dev/images/home/community/react_conf_hallway.webp',
+    // image: '/images/blog-react.jpg',
     tags: ['React', '性能优化', 'JavaScript'],
     readingTime: 10,
     featured: true
@@ -29,7 +30,9 @@ const posts = [
     excerpt: '深入比较CSS Grid和Flexbox，帮助你做出正确的布局选择。',
     content: '<p>在现代CSS布局中，Grid和Flexbox是最强大的两个工具...</p>',
     date: '2024-03-15',
-    image: '/images/blog-css.jpg',
+    image: 'https://zh-hans.react.dev/images/home/community/react_conf_hallway.webp',
+
+
     tags: ['CSS', '前端', 'Web设计'],
     readingTime: 6,
     featured: false
