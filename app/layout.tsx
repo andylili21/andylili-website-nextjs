@@ -1,9 +1,9 @@
 // app/layout.js
-import ThemeToggle from './components/ThemeToggle'
 import './globals.css'
 import type { ReactNode } from 'react'
 import { getTheme } from './lib/theme';
 import Header from './components/Header'
+import Footer from './components/Footer';
 
 
 
@@ -22,6 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <div>
           <Header/>
           {children}
+          <Footer/>
         </div>
       </body>
     </html>
