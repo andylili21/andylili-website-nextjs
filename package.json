@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
+    "gray-matter": "^4.0.3",
     "i18next": "^25.5.2",
     "i18next-resources-to-backend": "^1.2.1",
     "lucide-react": "^0.544.0",
@@ -19,6 +20,9 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-i18next": "^15.7.3",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-html": "^16.0.1",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
