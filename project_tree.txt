@@ -1,0 +1,98 @@
+.
+|-- DEVELOPMENT_README.md
+|-- INITIALIZATION_SUMMARY.md
+|-- QUICK_START.md
+|-- README.md
+|-- app
+|   |-- blog
+|   |   |-- [slug]
+|   |   `-- page.js
+|   |-- components
+|   |   |-- BlogList.js
+|   |   |-- BlogPost.js
+|   |   |-- BlogPreview.js
+|   |   |-- Footer.js
+|   |   |-- Header.js
+|   |   |-- Hero.js
+|   |   |-- LanguageSwicher.tsx
+|   |   |-- ProjectCard.js
+|   |   |-- Projects.js
+|   |   `-- ThemeToggle.tsx
+|   |-- contact
+|   |   `-- page.js
+|   |-- favicon.ico
+|   |-- globals.css
+|   |-- layout.tsx
+|   |-- lib
+|   |   |-- api
+|   |   |-- i18n.ts
+|   |   |-- i18nOptions.ts
+|   |   |-- posts.js
+|   |   `-- theme.ts
+|   |-- page.tsx
+|   |-- projects
+|   |   `-- page.tsx
+|   `-- time-planning
+|       `-- page.tsx
+|-- blog-posting-function-development.md
+|-- components
+|   `-- magicui
+|       `-- marquee.tsx
+|-- components.json
+|-- content
+|   |-- posts
+|   |   |-- css-grid-vs-flexbox.md
+|   |   |-- nextjs-blog-tutorial.md
+|   |   `-- react-performance-tips.md
+|   `-- projects.json
+|-- eslint.config.mjs
+|-- libs
+|   |-- generated
+|   |   `-- prisma
+|   `-- utils.ts
+|-- next.config.ts
+|-- package-lock.json
+|-- package.json
+|-- postcss.config.mjs
+|-- prisma
+|   |-- dev.db
+|   |-- migrations
+|   |   |-- 20251027111455_init
+|   |   `-- migration_lock.toml
+|   |-- prisma
+|   |   `-- dev.db
+|   |-- schema.prisma
+|   |-- seed.js
+|   `-- seed.ts
+|-- project_tree.txt
+|-- public
+|   |-- file.svg
+|   |-- globe.svg
+|   |-- images
+|   |   `-- image.png
+|   |-- locales
+|   |   |-- en
+|   |   |-- en.json
+|   |   |-- zh
+|   |   `-- zh.json
+|   |-- next.svg
+|   |-- vercel.svg
+|   `-- window.svg
+|-- server
+|   |-- index.js
+|   |-- routes
+|   |   |-- posts.js
+|   |   `-- projects.js
+|   `-- src
+|       |-- app.js
+|       |-- config
+|       |-- controllers
+|       |-- middlewares
+|       |-- routes
+|       |-- services
+|       `-- utils
+|-- tailwind.config.js
+|-- tsconfig.json
+`-- verify-setup.sh
+
+34 directories, 61 files
