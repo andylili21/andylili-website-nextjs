@@ -1,5 +1,6 @@
 // app/blog/page.js
 import { PrismaClient } from '@prisma/client';
+import Link from 'next/link';
 
 // 创建Prisma Client单例以避免在Next.js中重复连接
 const prisma = new PrismaClient();
@@ -30,7 +31,15 @@ export default async function BlogPage() {
   
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">博客文章</h1>
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-3xl font-bold">博客文章</h1>
+        <Link
+          href="/blog/create"
+          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold"
+        >
+          + 创建文章
+        </Link>
+      </div>
       {posts.length === 0 ? (
         <p>暂无文章</p>
       ) : (

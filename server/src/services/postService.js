@@ -89,7 +89,18 @@ class PostService {
     const { title, content, excerpt, categoryId, tags, coverImage, featured = false, status = 'DRAFT', slug: customSlug } = data;
     
     // 生成或使用自定义 slug
-    const slug = customSlug || generateSlug(title);
+    let slug = customSlug || generateSlug(title);
+    
+    // 检查 slug 是否已存在，如果存在则添加随机后缀
+    let existingPost = await prisma.post.findUnique({
+      where: { slug },
+    });
+    
+    if (existingPost) {
+      // 添加随机后缀以确保唯一性
+      const randomSuffix = Math.random().toString(36).substring(2, 8);
+      slug = `${slug}-${randomSuffix}`;
+    }
     
     // 计算阅读时长
     const readingTime = calculateReadingTime(content);
