@@ -45,7 +45,7 @@ app.use('/api/posts', postsRouter);
 app.use('/api/projects', projectsRouter);
 
 // 404 处理
-app.use('*', notFoundHandler);
+app.use((req, res, next) => notFoundHandler(req, res, next));
 
 // 错误处理中间件（必须放在最后）
 app.use(errorHandler);
