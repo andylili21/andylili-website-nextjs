@@ -45,7 +45,8 @@ export default async function BlogPage() {
       ) : (
         <div className="grid gap-6">
           {posts.map(post => (
-            <article key={post.id} className="border rounded-lg p-6 hover:shadow-md transition-shadow">
+          <Link href={`/blog/${post.slug}`} key={post.id} >
+            <article key={post.id} className="border rounded-lg p-6 hover:shadow-md transition-shadow" >
               <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
               <p className="text-gray-600 mb-4">{post.excerpt}</p>
               <div className="flex justify-between items-center">
@@ -59,6 +60,7 @@ export default async function BlogPage() {
                 )}
               </div>
             </article>
+          </Link>
           ))}
         </div>
       )}

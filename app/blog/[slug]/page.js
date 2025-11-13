@@ -32,7 +32,7 @@ export default async function BlogPostPage({ params }) {
 
   return (
     <main className="py-16 px-4 max-w-4xl mx-auto">
-      <article className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
+      <article className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden" key={post.id}>
         {/* 草稿标签 */}
         {post.status === 'DRAFT' && (
           <div className="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 p-4">
