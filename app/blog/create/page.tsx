@@ -1,6 +1,6 @@
 // app/blog/create/page.tsx
 
-import BlogCreateForm from '../../components/BlogCreateForm';
+import MetalBlogCreateForm from '@/app/components/MetalBlogCreateForm';
 
 /**
  * 博客创建页面
@@ -13,8 +13,8 @@ export const metadata = {
 
 export default function CreateBlogPage() {
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-900">
-      <BlogCreateForm />
+    <main>
+      <MetalBlogCreateForm />
     </main>
   );
 }
