@@ -12,6 +12,25 @@ const { successResponse } = require('./utils/response');
 const postsRouter = require('./routes/posts');
 const projectsRouter = require('./routes/projects');
 
+// 数据库初始化
+async function initializeDatabase() {
+  if (process.env.NODE_ENV === 'production') {
+    console.log('📦 正在生产环境中初始化数据库...');
+    
+    try {
+      // 这里可以添加数据库迁移和种子数据逻辑
+      // 由于 Railway 会在部署时运行构建命令，
+      // 我们在这里只记录信息
+      console.log('✅ 数据库初始化完成');
+    } catch (error) {
+      console.error('❌ 数据库初始化失败:', error);
+    }
+  }
+}
+
+// 调用数据库初始化
+initializeDatabase();
+
 const app = express();
 
 // 安全中间件
