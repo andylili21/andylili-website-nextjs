@@ -1,35 +1,60 @@
 // app/blog/[slug]/page.js
-import Header from '../../components/Header'
-import BlogPost from '../../components/BlogPost'
-import Footer from '../../components/Footer'
-import { getPostBySlug, getAllPosts } from '../../lib/posts'
+import { PrismaClient } from '@prisma/client'
+import { notFound } from 'next/navigation'
+import MetalBlogPost from '@/app/components/MetalBlogPost';
 
-export async function generateStaticParams() {
-  const posts = await getAllPosts()
-  
-  return posts.map((post) => ({
-    slug: post.slug,
-  }))
+const prisma = new PrismaClient()
+
+async function getPost(slug) {
+  try {
+    const post = await prisma.post.findUnique({
+      where: {
+        slug: slug
+      },
+      include: {
+        category: true
+      }
+    })
+    return post
+  } catch (error) {
+    console.error('获取文章详情失败:', error)
+    return null
+  }
 }
 
-// export async function generateMetadata({ params }) {
-//   const post = await getPostBySlug(params.slug)
-  
-//   return {
-//     title: `${post.title} | 我的博客`,
-//     description: post.excerpt,
-//   }
-// }
-
 export default async function BlogPostPage({ params }) {
-  const post = await getPostBySlug(params.slug)
-  const relatedPosts = [] // 这里可以添加相关文章的逻辑
+  const { slug } = await params
+  const post = await getPost(slug)
+
+  if (!post) {
+    notFound()
+  }
 
   return (
-    <main>
-      {/* <Header /> */}
-      <BlogPost post={post} relatedPosts={relatedPosts} />
-      <Footer />
-    </main>
+    <MetalBlogPost post={post} />
   )
+}
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params
+  const post = await getPost(slug)
+
+  if (!post) {
+    return {
+      title: '文章未找到',
+      description: '抱歉，您要查找的文章不存在。'
+    }
+  }
+
+  return {
+    title: `${post.title} - Andy Li 的博客`,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: 'article',
+      publishedTime: post.publishedAt,
+      authors: ['Andy Li']
+    }
+  }
 }

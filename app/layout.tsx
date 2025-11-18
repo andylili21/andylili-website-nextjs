@@ -1,9 +1,9 @@
 // app/layout.js
-import ThemeToggle from './components/ThemeToggle'
 import './globals.css'
 import type { ReactNode } from 'react'
 import { getTheme } from './lib/theme';
-import Header from './components/Header'
+import CyberHeader from './components/CyberHeader';
+import CyberFooter from './components/CyberFooter';
 
 
 
@@ -19,9 +19,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="zh-CN" data-theme={initialTheme}>
       <body>
-        <div>
-          <Header/>
-          {children}
+        <div className="flex flex-col min-h-screen">
+          <CyberHeader />
+          <main className="flex-grow pt-16">
+            {children}
+          </main>
+          <CyberFooter />
         </div>
       </body>
     </html>

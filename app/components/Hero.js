@@ -13,12 +13,12 @@ export default function Hero() {
           <span>Tailwind CSS</span>
         </Marquee> */}
         <h1 className="text-2xl md:text-2xl font-bold text-gray-800 mb-6 text-gray-800 dark:text-gray-200">
-          个人博客
+          博客site
         </h1>
         <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto text-gray-800 dark:text-gray-200">
           {/* 欢迎来到我的个人空间，这里分享Web开发、编程技巧和创意项目。
           我热爱构建优秀的数字体验并分享我的知识。 */}
-          构建优秀的数字体验并分享我的知识
+          {/* 构建优秀的数字体验并分享我的知识 */}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
