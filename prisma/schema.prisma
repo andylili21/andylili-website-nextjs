@@ -5,14 +5,21 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "../node_modules/.prisma/client"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
+  // provider = "postgresql"  // 生产环境使用 PostgreSQL
+  // url      = env("DATABASE_URL")
 }
+
+// PostgreSQL 生产环境配置（取消注释以使用）
+// datasource db {
+//   provider = "postgresql"
+//   url      = env("DATABASE_URL")
+// }
 
 model Category {
   id        Int      @id @default(autoincrement())

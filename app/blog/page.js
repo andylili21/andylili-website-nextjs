@@ -1,5 +1,6 @@
 // app/blog/page.js
 import { PrismaClient } from '@prisma/client';
+import MetalBlogList from '@/app/components/MetalBlogList';
 
 // 创建Prisma Client单例以避免在Next.js中重复连接
 const prisma = new PrismaClient();
@@ -29,30 +30,6 @@ export default async function BlogPage() {
   const posts = await getPosts();
   
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">博客文章</h1>
-      {posts.length === 0 ? (
-        <p>暂无文章</p>
-      ) : (
-        <div className="grid gap-6">
-          {posts.map(post => (
-            <article key={post.id} className="border rounded-lg p-6 hover:shadow-md transition-shadow">
-              <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-              <p className="text-gray-600 mb-4">{post.excerpt}</p>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-500">
-                  {post.category?.name && `分类: ${post.category.name}`}
-                </span>
-                {post.publishedAt && (
-                  <time className="text-sm text-gray-500">
-                    {new Date(post.publishedAt).toLocaleDateString()}
-                  </time>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-      )}
-    </div>
+    <MetalBlogList initialPosts={posts} />
   );
 }

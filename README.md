@@ -235,22 +235,35 @@ yarn lint
 
 ## 🌐 部署
 
-### Vercel 部署（推荐）
+本项目采用前后端分离架构，推荐使用以下部署方案：
 
-最简单的部署方式是使用 [Vercel 平台](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)：
+### 前端部署到 Vercel（推荐）
 
 1. 将代码推送到 GitHub/GitLab/Bitbucket
 2. 在 Vercel 中导入项目
 3. Vercel 会自动检测 Next.js 并配置构建设置
-4. 点击部署即可
+4. 配置环境变量 `NEXT_PUBLIC_API_URL` 指向后端地址
+5. 点击部署即可
 
 详细文档：[Next.js 部署指南](https://nextjs.org/docs/app/building-your-application/deploying)
+
+### 后端部署到 Railway（推荐）
+
+1. 在 Railway 上创建新项目
+2. 连接 GitHub 仓库
+3. 配置环境变量：
+   - `DATABASE_URL`: PostgreSQL 数据库连接字符串
+   - `ALLOWED_ORIGINS`: 前端域名
+   - `NODE_ENV`: production
+4. Railway 会自动运行数据库迁移和种子数据脚本
 
 ### 其他部署选项
 
 - **Docker**: 使用容器化部署
 - **静态导出**: 使用 `next export` 生成静态网站
 - **自托管**: 在自己的服务器上运行
+
+详细部署指南请查看 [DEPLOYMENT.md](./DEPLOYMENT.md) 文件。
 
 ## 📚 学习资源
 
