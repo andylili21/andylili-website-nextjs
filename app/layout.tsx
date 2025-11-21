@@ -18,6 +18,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
     <html lang="zh-CN" data-theme={initialTheme}>
+      <head>
+        {/* CyberTruck 字体系统 - Inter + Roboto Mono */}
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@500&display=swap" 
+          rel="stylesheet" 
+        />
+      </head>
       <body>
         <div className="flex flex-col min-h-screen">
           <CyberHeader />
